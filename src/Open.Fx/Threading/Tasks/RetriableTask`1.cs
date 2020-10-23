@@ -2,13 +2,18 @@
 
 namespace System.Threading.Tasks
 {
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <typeparam name="TOutputType"></typeparam>
     public class RetriableTask<TOutputType>
         where TOutputType : class
     {
         /// <summary>
+        /// 
         /// </summary>
         /// <param name="task"></param>
-        /// <param name="attemptDelays">If not provided only a single attempt is made</param>
+        /// <param name="attemptDelays"></param>
         /// <param name="throwsOnFailure"></param>
         public RetriableTask(
             Task<TOutputType> task,
@@ -20,10 +25,23 @@ namespace System.Threading.Tasks
             Output = SyncRunner.Run(() => Run(task, 1, attemptDelays));
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         public TOutputType Output { get; }
 
+        /// <summary>
+        /// 
+        /// </summary>
         public bool ThrowsOnFailure { get; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="task"></param>
+        /// <param name="attemptCount"></param>
+        /// <param name="attemptDelays"></param>
+        /// <returns></returns>
         private async Task<TOutputType> Run(
             Task<TOutputType> task,
             int attemptCount,

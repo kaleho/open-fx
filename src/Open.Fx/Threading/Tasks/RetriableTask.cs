@@ -2,12 +2,16 @@
 
 namespace System.Threading.Tasks
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class RetriableTask
     {
         /// <summary>
+        /// 
         /// </summary>
         /// <param name="task"></param>
-        /// <param name="attemptDelays">If not provided only a single attempt is made</param>
+        /// <param name="attemptDelays"></param>
         /// <param name="throwsOnFailure"></param>
         public RetriableTask(
             Task task,
@@ -19,10 +23,23 @@ namespace System.Threading.Tasks
             Completed = SyncRunner.Run(() => Run(task, 1, attemptDelays));
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         public bool Completed { get; }
 
+        /// <summary>
+        /// 
+        /// </summary>
         public bool ThrowsOnFailure { get; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="task"></param>
+        /// <param name="attemptCount"></param>
+        /// <param name="attemptDelays"></param>
+        /// <returns></returns>
         private async Task<bool> Run(
             Task task,
             int attemptCount,

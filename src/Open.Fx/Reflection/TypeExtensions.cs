@@ -4,6 +4,12 @@ namespace System.Reflection
 {
     public static class TypeExtensions
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="source"></param>
+        /// <returns></returns>
         public static bool HasAttribute<T>(
             this Type source)
         {
@@ -23,6 +29,13 @@ namespace System.Reflection
             return returnValue;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="sourceType"></param>
+        /// <param name="isClass"></param>
+        /// <returns></returns>
         public static bool Implements<T>(
             this Type sourceType,
             bool isClass = true)
@@ -30,6 +43,13 @@ namespace System.Reflection
             return sourceType.Implements(typeof(T), isClass);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sourceType"></param>
+        /// <param name="scanType"></param>
+        /// <param name="isClass"></param>
+        /// <returns></returns>
         public static bool Implements(
             this Type sourceType,
             Type scanType,
@@ -47,6 +67,13 @@ namespace System.Reflection
             return isAssignable;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="type"></param>
+        /// <param name="target"></param>
+        /// <param name="name"></param>
+        /// <param name="value"></param>
         public static void SetProperty(
             this Type type,
             object target,
@@ -69,6 +96,13 @@ namespace System.Reflection
                     new[] { value });
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="object"></param>
+        /// <param name="propertyName"></param>
+        /// <param name="value"></param>
+        /// <returns></returns>
         public static bool TrySetPropertyValue(
             this object @object,
             string propertyName,

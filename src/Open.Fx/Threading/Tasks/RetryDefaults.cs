@@ -3,8 +3,14 @@ using System.Collections.Immutable;
 
 namespace System.Threading.Tasks
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public sealed class RetryDefaults
     {
+        /// <summary>
+        /// 
+        /// </summary>
         public static readonly IDictionary<int, int> DefaultAttemptDelays =
             ImmutableDictionary.CreateRange(
                 new Dictionary<int, int>

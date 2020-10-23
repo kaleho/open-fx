@@ -1,8 +1,14 @@
 ﻿namespace System.Threading.Tasks
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class SlimLock
         : IDisposable
     {
+        /// <summary>
+        /// 
+        /// </summary>
         public readonly struct ReadLockToken
             : IDisposable
         {
@@ -22,6 +28,9 @@
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         public readonly struct WriteLockToken
             : IDisposable
         {
@@ -48,11 +57,19 @@
             _lock.Dispose();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public ReadLockToken ReadLock()
         {
             return new ReadLockToken(_lock);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public WriteLockToken WriteLock()
         {
             return new WriteLockToken(_lock);

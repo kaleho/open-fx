@@ -5,9 +5,10 @@ namespace System.IO
     public static class DirectoryExtensions
     {
         /// <summary>
+        /// 
         /// </summary>
         /// <param name="path"></param>
-        /// <param name="extensions">With or without the initial (.)</param>
+        /// <param name="extensions"></param>
         /// <returns></returns>
         public static string[] GetFilesWithExtensions(
             this string path,
@@ -29,6 +30,11 @@ namespace System.IO
             return returnValue;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="path"></param>
+        /// <returns></returns>
         public static string ParentDirectory(
             this string path)
         {

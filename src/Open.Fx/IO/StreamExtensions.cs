@@ -4,6 +4,11 @@ namespace System.IO
 {
     public static class StreamExtensions
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="stream"></param>
+        /// <returns></returns>
         public static async Task<byte[]> ToArrayAsync(
             this Stream stream)
         {
