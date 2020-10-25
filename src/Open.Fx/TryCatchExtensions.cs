@@ -12,7 +12,7 @@
         /// <param name="defaultValue"></param>
         /// <param name="returnValue"></param>
         /// <returns></returns>
-        public static bool TryCatchDefault<TIn, TOut>(
+        public static bool TryCatch<TIn, TOut>(
             this TIn source,
             Func<TIn, TOut> func,
             TOut defaultValue,
@@ -39,7 +39,7 @@
         /// <param name="source"></param>
         /// <param name="action"></param>
         /// <returns></returns>
-        public static bool TryCatchIgnore<T>(
+        public static bool TryCatch<T>(
             this T source,
             Action<T> action)
         {
@@ -64,7 +64,7 @@
         /// <param name="func"></param>
         /// <param name="returnValue"></param>
         /// <returns></returns>
-        public static bool TryCatchIgnore<TIn, TOut>(
+        public static bool TryCatch<TIn, TOut>(
             this TIn source,
             Func<TIn, TOut> func,
             out TOut returnValue)
