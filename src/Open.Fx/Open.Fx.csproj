@@ -11,7 +11,7 @@
     <PackageProjectUrl>https://github.com/kaleho/open-fx</PackageProjectUrl>
     <PackageTags>utilities extensions helpers</PackageTags>
     <PackageLicenseFile>LICENSE.TXT</PackageLicenseFile>
-    <Description>.</Description>
+    <Description>A collection of extensions, utilities, and helpers that are used to extend the core .NET classes.</Description>
     <RootNamespace>System</RootNamespace>
   </PropertyGroup>
 
