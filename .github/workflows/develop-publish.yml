@@ -24,10 +24,10 @@ jobs:
       - name: set runtime variables
         run: |
           # Set value locally to be be used in the following lines
-          BRANCH=$(git rev-parse --abbrev-ref HEAD)
-          RUN_NUMBER=$(seq -f "%03g" $GITHUB_RUN_NUMBER $GITHUB_RUN_NUMBER)
-          echo "::set-env name=BRANCH::$BRANCH"
-          echo "::set-env name=VERSION::$SEMVER-$SUFFIX-$RUN_NUMBER"
+          echo $(git rev-parse --abbrev-ref HEAD) >> $BRANCH
+          echo $(seq -f "%03g" $GITHUB_RUN_NUMBER $GITHUB_RUN_NUMBER) >> $RUN_NUMBER
+          #echo "::set-env name=BRANCH::$BRANCH"
+          #echo "::set-env name=VERSION::$SEMVER-$SUFFIX-$RUN_NUMBER"
         shell: bash
 
       - name: log runtime variables
